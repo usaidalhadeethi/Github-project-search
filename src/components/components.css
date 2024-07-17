@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+    .css-cuefkz-MuiContainer-root {
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .css-mts {
+        margin-top: 16px !important;
+    }
+}
