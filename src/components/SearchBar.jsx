@@ -10,7 +10,7 @@ export default function CustomizedInputBase() {
         <Container maxWidth='sm'>
             <Paper
             component="form"
-            sx={{ p: '12px', display: 'flex', alignItems: 'center', width:{sm:'100%', md:'80%'}, bgcolor: 'primary.main', m:'auto', mb:'20px', mt:'130px' }}
+            sx={{ p: '12px', display: 'flex', alignItems: 'center', bgcolor: 'primary.main', m:'auto', mb:'20px', mt:'100px' }}
             className='css-mts'
             >
                 <Box sx={{pl:'8px'}}>
@@ -31,7 +31,7 @@ export default function CustomizedInputBase() {
                 />
                 
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                <Button sx={{color:"white", backgroundColor:'secondary.main', '&:hover':{'backgroundColor':'#1a4b3a'}, p:'10px'}}>Search</Button>
+                <Button sx={{color:"white", backgroundColor:'secondary.main', '&:hover':{'backgroundColor':'secondary.dark'}, p:'10px'}}>Search</Button>
             </Paper>
         </Container>
     );
