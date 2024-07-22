@@ -1,14 +1,4 @@
-@media (max-width: 600px) {
-    .css-cuefkz-MuiContainer-root {
-        padding: 0 !important;
-    }
-    .css-1unik2p-MuiGrid-root {
-        padding: 25px 0 0 40px !important;
-    }
-    .css-iv7vbz-MuiGrid-root {
-        padding: 25px 0 0 40px !important;
-    }
-}
+
 
 @media (max-width: 600px) {
     .css-mts {
@@ -16,24 +6,3 @@
     }
 }
 
-.link {
-    background-color: #12372A;
-    padding: 7px;
-    width: 138px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 4px; 
-    display: block; 
-    color: white;
-}
-
-.link:hover {
-background-color: #0A2B1E;
-}
-
-@media (max-width: 600px) {
-    .link {
-        width: 85px;
-    }
-}

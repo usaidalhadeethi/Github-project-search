@@ -1,6 +1,12 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Container from '@mui/material/Container';
-import SearchBar from './components/SearchBar'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SearchBar from './components/SearchBar';
+import RepoCardList from './components/RepoCardList';
+import FollowersCardList from './components/FollowersCardList';
+import FollowingCardList from './components/FollowingCardList';
+import { SearchContext } from './assets/Context/SearchContext';
+import { useState } from 'react';
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -13,14 +19,22 @@ const theme = createTheme({
 });
 
 function App() {
+    const [searchInput, setSearchInput] = useState('');
+
     return (
-        <ThemeProvider theme={theme}>
-            <Container>
-                <SearchBar/>
-            </Container>
-        </ThemeProvider>
+        <SearchContext.Provider value={{ searchInput, setSearchInput }}>
+            <ThemeProvider theme={theme}>
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<SearchBar />} />
+                        <Route path="/repos" element={<RepoCardList />} />
+                        <Route path="/followers" element={<FollowersCardList />} />
+                        <Route path="/following" element={<FollowingCardList />} />
+                    </Routes>
+                </Router>
+            </ThemeProvider>
+        </SearchContext.Provider>
     );
 }
 
 export default App;
-

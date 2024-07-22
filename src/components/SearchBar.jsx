@@ -1,28 +1,28 @@
-import './components.css'
-import { useState } from 'react'
+import './components.css';
+import { useContext, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, Button, Container } from '@mui/material';
 import ResultCard from './ResultCard';
+import { SearchContext } from '../assets/Context/SearchContext';
 
-export default function CustomizedInputBase() {
-    const [searchInput, setSearchInput] = useState('');
+export default function SearchBar() {
+    const { searchInput, setSearchInput } = useContext(SearchContext);
     const [showResult, setShowResult] = useState(false);
 
-    function handleInputChange(e) {
+    const handleInputChange = (e) => {
         setSearchInput(e.target.value);
-    }
+    };
 
-    function handleSearchClick() {
+    const handleSearchClick = () => {
         setShowResult(true);
-    }
+    };
 
     return (
         <Container maxWidth='sm'>
-            <Box sx={{width:{xs:'100%', md:'90%'}}}>
-
+            <Box sx={{ width: { xs: '100%', md: '90%' } }}>
                 <Paper
                     component="form"
                     sx={{ p: '12px', display: 'flex', alignItems: 'center', bgcolor: 'primary.main', m: 'auto', mb: '20px', mt: '100px' }}
@@ -38,7 +38,7 @@ export default function CustomizedInputBase() {
                             flex: 1,
                             color: 'white',
                             '& .MuiInputBase-input::placeholder': {
-                                color: 'rgba(255, 255, 255, 0.8)'
+                                color: 'rgba(255, 255, 255, 0.8)',
                             },
                         }}
                         placeholder="Search Profile Name"
@@ -56,7 +56,7 @@ export default function CustomizedInputBase() {
                         Search
                     </Button>
                 </Paper>
-                <ResultCard searchInput={searchInput} showResult={showResult} />
+                <ResultCard showResult={showResult} />
             </Box>
         </Container>
     );
